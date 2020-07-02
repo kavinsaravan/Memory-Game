@@ -32,6 +32,7 @@ for (i = 0; i < table.rows.length; i++){
     cell.style.backgroundImage = "url('" + images[x] + "')"
     console.log("IMAGE: " + cell.style.backgroundImage)
     cell.style.backgroundPosition = "center center"
+    cell.style.backgroundSize = "cover"
     x++
   }
 }
