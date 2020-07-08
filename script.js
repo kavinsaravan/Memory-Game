@@ -13,8 +13,8 @@ images[9] = "eagle.jpg"
 images[10] = "cat.jpg"
 images[11] = "cow.jpeg"
 images[12] = "cheetah.jpg"
-images[13] = "elehpant.jpeg"
-images[14] = "monkey.jpg"
+images[13] = "elephant.jpg"
+images[14] = "monkey.jpeg"
 images[15] = "frog.jpg"
 // 1. go through all the cells in the table
 var table = document.getElementById("gametable")
@@ -44,6 +44,7 @@ var count = 0
 
 var previous = null
 
+
 function flipCell() {
     //console.log("TAG: " + this.kavin)
     this.style.backgroundImage = "url('" + images[this.tag] + "')"
@@ -52,9 +53,12 @@ function flipCell() {
         var current = this
         setTimeout(function() {
             // lines here will execute after 1000 milliseconds or 1 second
-            current.style.backgroundImage = null
-            previous.style.backgroundImage = null
+            if (current.style.backgroundImage !=     previous.style.backgroundImage) {
+                current.style.backgroundImage = null
+                previous.style.backgroundImage = null
+            }
         }, 1000);
+        
     } else {
         previous = this
     }
