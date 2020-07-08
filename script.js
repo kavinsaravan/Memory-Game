@@ -28,10 +28,11 @@ for (i = 0; i < table.rows.length; i++){
     var cell = table.rows[i].cells[j]
     //cell.style.backgroundColor = "green"
     cell.kavin = "row " + i + " / col " + j
-    console.log("CELL: " + cell.kavin)
+    //console.log("CELL: " + cell.kavin)
     cell.onclick = flipCell
+
     //cell.style.backgroundImage = "url('" + images[x] + "')"
-    console.log("IMAGE: " + cell.style.backgroundImage)
+    //console.log("IMAGE: " + cell.style.backgroundImage)
     cell.style.backgroundPosition = "center center"
     cell.style.backgroundSize = "cover"
     cell.tag = x
@@ -39,7 +40,13 @@ for (i = 0; i < table.rows.length; i++){
   }
 }
 
+var count = 0
 function flipCell() {
-  console.log("TAG: " + this.kavin)
+  //console.log("TAG: " + this.kavin)
   this.style.backgroundImage = "url('" + images[this.tag] + "')"
+  count++
+  if ((count % 2) == 0) {
+      this.style.backgroundImage = null
+      //alert("something") 
+  }
 }
