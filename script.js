@@ -40,25 +40,27 @@ for (i = 0; i < table.rows.length; i++){
   }
 }
 
+// global variables
 var count = 0
-
 var previous = null
+var score = 0
 
-
+// called on each cell click
 function flipCell() {
-    //console.log("TAG: " + this.kavin)
     this.style.backgroundImage = "url('" + images[this.tag] + "')"
     count++
     if ((count % 2) == 0) {
         var current = this
+        if (current.style.backgroundImage ==     previous.style.backgroundImage) {
+            score = score + 10
+            console.log("The score is " + score)
+        }
         setTimeout(function() {
-            // lines here will execute after 1000 milliseconds or 1 second
             if (current.style.backgroundImage !=     previous.style.backgroundImage) {
                 current.style.backgroundImage = null
                 previous.style.backgroundImage = null
-            }
+            } 
         }, 1000);
-        
     } else {
         previous = this
     }
