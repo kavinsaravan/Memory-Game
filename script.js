@@ -41,12 +41,21 @@ for (i = 0; i < table.rows.length; i++){
 }
 
 var count = 0
+
+var previous = null
+
 function flipCell() {
-  //console.log("TAG: " + this.kavin)
-  this.style.backgroundImage = "url('" + images[this.tag] + "')"
-  count++
-  if ((count % 2) == 0) {
-      this.style.backgroundImage = null
-      //alert("something") 
-  }
+    //console.log("TAG: " + this.kavin)
+    this.style.backgroundImage = "url('" + images[this.tag] + "')"
+    count++
+    if ((count % 2) == 0) {
+        var current = this
+        setTimeout(function() {
+            // lines here will execute after 1000 milliseconds or 1 second
+            current.style.backgroundImage = null
+            previous.style.backgroundImage = null
+        }, 1000);
+    } else {
+        previous = this
+    }
 }
