@@ -53,7 +53,8 @@ function flipCell() {
         var current = this
         if (current.style.backgroundImage ==     previous.style.backgroundImage) {
             score = score + 10
-            console.log("The score is " + score)
+            document.getElementById("score").innerHTML = score
+            
         }
         setTimeout(function() {
             if (current.style.backgroundImage !=     previous.style.backgroundImage) {
